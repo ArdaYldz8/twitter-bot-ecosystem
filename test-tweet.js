@@ -1,4 +1,7 @@
-require('dotenv').config();
+// Load .env only in development (Railway uses its own env vars)
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const { TwitterApi } = require('twitter-api-v2');
 
 // Twitter client oluştur
